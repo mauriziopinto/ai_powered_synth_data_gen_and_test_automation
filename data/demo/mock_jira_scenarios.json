@@ -1,0 +1,103 @@
+{
+  "scenarios": [
+    {
+      "key": "TELECOM-101",
+      "summary": "Verify customer profile update functionality",
+      "description": "**Objective:** Ensure customers can successfully update their profile information\n\n**Preconditions:**\n- Customer is logged into the account portal\n- Customer has an active account\n\n**Test Steps:**\n1. Navigate to Profile Settings page\n2. Update email address to a new valid email\n3. Update phone number to a new valid format\n4. Click Save Changes button\n5. Verify success message is displayed\n6. Log out and log back in\n7. Verify changes are persisted\n\n**Expected Results:**\n- Profile updates are saved successfully\n- Success confirmation message appears\n- Updated information is displayed after re-login\n- Email verification is sent to new email address\n\n**Test Data Requirements:**\n- Valid customer account with existing profile\n- New email address (not already in system)\n- Valid phone number format",
+      "labels": ["telecom-regression", "profile-management", "smoke-test"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "playwright"
+    },
+    {
+      "key": "TELECOM-102",
+      "summary": "Validate data usage tracking accuracy",
+      "description": "**Objective:** Verify that data usage is accurately tracked and displayed\n\n**Preconditions:**\n- Customer has an active data plan\n- Customer has used data in current billing cycle\n\n**Test Steps:**\n1. Log into customer portal\n2. Navigate to Usage Dashboard\n3. Verify current data usage is displayed\n4. Check usage breakdown by date\n5. Verify usage alerts are configured\n6. Simulate data usage threshold breach\n7. Verify alert notification is sent\n\n**Expected Results:**\n- Data usage displays accurate values\n- Usage breakdown matches detailed logs\n- Alerts trigger at configured thresholds\n- Usage updates within 15 minutes of activity\n\n**Test Data Requirements:**\n- Customer with data usage history\n- Various usage patterns (low, medium, high)\n- Configured usage alerts",
+      "labels": ["telecom-regression", "usage-tracking", "critical"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "selenium"
+    },
+    {
+      "key": "TELECOM-103",
+      "summary": "Test payment processing with various card types",
+      "description": "**Objective:** Ensure payment system handles different card types correctly\n\n**Preconditions:**\n- Customer has outstanding balance\n- Payment gateway is operational\n\n**Test Steps:**\n1. Navigate to Payment page\n2. Enter Visa card details\n3. Submit payment\n4. Verify payment success\n5. Repeat with Mastercard\n6. Repeat with American Express\n7. Test with invalid card number\n8. Verify appropriate error message\n\n**Expected Results:**\n- Valid cards process successfully\n- Payment confirmation is displayed\n- Account balance is updated\n- Invalid cards show clear error messages\n- Transaction history is updated\n\n**Test Data Requirements:**\n- Test credit card numbers (Luhn valid)\n- Various card types (Visa, MC, Amex)\n- Invalid card numbers for negative testing",
+      "labels": ["telecom-regression", "payment", "integration"],
+      "priority": "Critical",
+      "status": "Ready for Testing",
+      "framework": "robot"
+    },
+    {
+      "key": "TELECOM-104",
+      "summary": "Verify plan upgrade/downgrade workflow",
+      "description": "**Objective:** Test customer ability to change service plans\n\n**Preconditions:**\n- Customer has active basic plan\n- Multiple plan options are available\n\n**Test Steps:**\n1. Log into account portal\n2. Navigate to Plan Management\n3. View available plans\n4. Select premium plan upgrade\n5. Review plan comparison\n6. Confirm upgrade\n7. Verify prorated charges\n8. Test downgrade to basic plan\n9. Verify downgrade restrictions\n\n**Expected Results:**\n- Plan options display correctly\n- Upgrade processes immediately\n- Prorated charges calculated accurately\n- Downgrade follows policy rules\n- Confirmation emails sent\n\n**Test Data Requirements:**\n- Customer on basic plan\n- Available upgrade/downgrade options\n- Prorated billing calculations",
+      "labels": ["telecom-regression", "plan-management"],
+      "priority": "Medium",
+      "status": "Ready for Testing",
+      "framework": "playwright"
+    },
+    {
+      "key": "TELECOM-105",
+      "summary": "Test account suspension and reactivation",
+      "description": "**Objective:** Verify account suspension workflow for non-payment\n\n**Preconditions:**\n- Customer account is active\n- Account has overdue balance\n\n**Test Steps:**\n1. Simulate overdue payment scenario\n2. Verify suspension warning email sent\n3. Wait for suspension grace period\n4. Verify account is suspended\n5. Attempt to use services (should fail)\n6. Process payment to clear balance\n7. Verify account reactivation\n8. Test service restoration\n\n**Expected Results:**\n- Warning emails sent before suspension\n- Account suspended after grace period\n- Services blocked during suspension\n- Payment clears suspension\n- Services restored within 1 hour\n\n**Test Data Requirements:**\n- Account with overdue balance\n- Payment processing capability\n- Service usage logs",
+      "labels": ["telecom-regression", "account-management", "edge-case"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "selenium"
+    },
+    {
+      "key": "FINANCE-201",
+      "summary": "Validate fraud detection for unusual transactions",
+      "description": "**Objective:** Ensure fraud detection system identifies suspicious transactions\n\n**Preconditions:**\n- Customer has established transaction history\n- Fraud detection rules are active\n\n**Test Steps:**\n1. Process normal transaction (should succeed)\n2. Process transaction from unusual location\n3. Verify fraud alert is triggered\n4. Process high-value transaction\n5. Verify additional verification required\n6. Test velocity check (multiple rapid transactions)\n7. Verify account lock after threshold\n8. Test customer verification workflow\n\n**Expected Results:**\n- Normal transactions process without delay\n- Unusual patterns trigger alerts\n- High-value transactions require verification\n- Velocity limits enforced\n- Customer can verify legitimate transactions\n\n**Test Data Requirements:**\n- Customer transaction history\n- Various transaction patterns\n- Fraud detection thresholds",
+      "labels": ["finance-regression", "fraud-detection", "critical"],
+      "priority": "Critical",
+      "status": "Ready for Testing",
+      "framework": "playwright"
+    },
+    {
+      "key": "FINANCE-202",
+      "summary": "Test credit card number validation",
+      "description": "**Objective:** Verify Luhn algorithm validation for card numbers\n\n**Preconditions:**\n- Payment form is accessible\n- Validation rules are configured\n\n**Test Steps:**\n1. Enter valid Visa card number\n2. Verify validation passes\n3. Enter invalid card number (fails Luhn)\n4. Verify validation error\n5. Test various card types (Visa, MC, Amex, Discover)\n6. Test card number with spaces\n7. Test card number with dashes\n8. Verify formatting is handled correctly\n\n**Expected Results:**\n- Valid card numbers accepted\n- Invalid numbers rejected with clear message\n- Various formats handled correctly\n- Card type detected from number\n- CVV length validated per card type\n\n**Test Data Requirements:**\n- Valid test card numbers\n- Invalid card numbers\n- Various formatting styles",
+      "labels": ["finance-regression", "validation", "pci-compliance"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "robot"
+    },
+    {
+      "key": "FINANCE-203",
+      "summary": "Verify transaction history export functionality",
+      "description": "**Objective:** Test customer ability to export transaction history\n\n**Preconditions:**\n- Customer has transaction history\n- Export feature is enabled\n\n**Test Steps:**\n1. Log into customer portal\n2. Navigate to Transaction History\n3. Select date range for export\n4. Choose CSV format\n5. Download export file\n6. Verify file contents\n7. Repeat with PDF format\n8. Test with large date range (1 year)\n\n**Expected Results:**\n- Export generates successfully\n- File contains all transactions in range\n- Data is accurate and complete\n- Multiple formats supported\n- Large exports handled efficiently\n\n**Test Data Requirements:**\n- Customer with transaction history\n- Various date ranges\n- Multiple transaction types",
+      "labels": ["finance-regression", "reporting"],
+      "priority": "Medium",
+      "status": "Ready for Testing",
+      "framework": "selenium"
+    },
+    {
+      "key": "HEALTH-301",
+      "summary": "Verify patient record access controls",
+      "description": "**Objective:** Ensure HIPAA-compliant access controls for patient records\n\n**Preconditions:**\n- Multiple user roles configured (doctor, nurse, admin)\n- Patient records exist in system\n\n**Test Steps:**\n1. Log in as doctor\n2. Verify access to assigned patients\n3. Attempt to access unassigned patient (should fail)\n4. Log in as nurse\n5. Verify read-only access to assigned patients\n6. Attempt to modify record (should fail)\n7. Log in as admin\n8. Verify full access to all records\n9. Check audit log for all access attempts\n\n**Expected Results:**\n- Role-based access enforced\n- Unauthorized access blocked\n- Audit trail captures all access\n- Error messages don't reveal PHI\n- Session timeout enforced\n\n**Test Data Requirements:**\n- Multiple user accounts with different roles\n- Patient records with various access levels\n- Audit logging enabled",
+      "labels": ["healthcare-regression", "security", "hipaa-compliance", "critical"],
+      "priority": "Critical",
+      "status": "Ready for Testing",
+      "framework": "playwright"
+    },
+    {
+      "key": "HEALTH-302",
+      "summary": "Test appointment scheduling with conflict detection",
+      "description": "**Objective:** Verify appointment system prevents double-booking\n\n**Preconditions:**\n- Physician schedules are configured\n- Appointment slots are available\n\n**Test Steps:**\n1. Log into scheduling system\n2. View available appointment slots\n3. Book appointment for patient\n4. Verify confirmation\n5. Attempt to book same slot for different patient\n6. Verify conflict error\n7. Test rescheduling existing appointment\n8. Verify cancellation workflow\n9. Test waitlist functionality\n\n**Expected Results:**\n- Available slots display correctly\n- Double-booking prevented\n- Conflicts detected immediately\n- Rescheduling updates calendar\n- Notifications sent to all parties\n\n**Test Data Requirements:**\n- Physician schedules\n- Patient records\n- Various appointment types",
+      "labels": ["healthcare-regression", "scheduling"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "selenium"
+    },
+    {
+      "key": "HEALTH-303",
+      "summary": "Validate prescription refill request workflow",
+      "description": "**Objective:** Test electronic prescription refill process\n\n**Preconditions:**\n- Patient has active prescriptions\n- Pharmacy integration is configured\n\n**Test Steps:**\n1. Log into patient portal\n2. View active prescriptions\n3. Request refill for eligible prescription\n4. Verify request sent to physician\n5. Physician approves refill\n6. Verify pharmacy notification\n7. Test refill denial workflow\n8. Verify patient notification\n9. Test refill limits enforcement\n\n**Expected Results:**\n- Refill requests submitted successfully\n- Physician receives notification\n- Pharmacy receives approved refills\n- Refill limits enforced\n- All parties notified of status\n\n**Test Data Requirements:**\n- Patient with active prescriptions\n- Physician approval workflow\n- Pharmacy integration",
+      "labels": ["healthcare-regression", "prescription-management"],
+      "priority": "High",
+      "status": "Ready for Testing",
+      "framework": "robot"
+    }
+  ]
+}

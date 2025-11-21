@@ -1,0 +1,31 @@
+transaction_id,customer_name,card_number,cvv,amount,merchant,merchant_category,transaction_date,transaction_time,location,is_fraud,fraud_type,customer_age,account_balance
+TXN-50001,Alice Thompson,4532-1234-5678-9012,123,45.67,Amazon.com,online_retail,2024-01-15,14:23:45,Seattle WA,false,,34,2450.50
+TXN-50002,Bob Martinez,5412-9876-5432-1098,456,1250.00,Best Buy,electronics,2024-01-15,15:45:12,Portland OR,false,,45,8920.75
+TXN-50003,Carol White,3782-822463-10005,789,89.99,Whole Foods,grocery,2024-01-15,16:12:33,San Francisco CA,false,,28,1567.30
+TXN-50004,David Kim,6011-1111-1111-1117,234,2500.00,Luxury Hotel,travel,2024-01-15,18:34:56,Miami FL,true,stolen_card,52,15230.00
+TXN-50005,Emma Davis,4532-2345-6789-0123,567,34.50,Starbucks,food_beverage,2024-01-16,08:15:22,Boston MA,false,,31,3421.80
+TXN-50006,Frank Wilson,5412-8765-4321-0987,890,567.89,Target,retail,2024-01-16,10:45:18,Chicago IL,false,,39,6789.45
+TXN-50007,Grace Lee,3782-822463-20006,123,15.75,McDonald's,food_beverage,2024-01-16,12:23:44,Austin TX,false,,26,892.60
+TXN-50008,Henry Brown,6011-2222-2222-2228,456,3200.00,Electronics Store,electronics,2024-01-16,14:56:31,Los Angeles CA,true,account_takeover,48,12450.90
+TXN-50009,Iris Chen,4532-3456-7890-1234,789,125.00,Shell Gas,fuel,2024-01-16,16:34:12,Denver CO,false,,35,4567.20
+TXN-50010,Jack Anderson,5412-7654-3210-9876,234,890.50,Home Depot,home_improvement,2024-01-17,09:12:45,Phoenix AZ,false,,42,9876.55
+TXN-50011,Karen Taylor,3782-822463-30007,567,45.00,Uber,transportation,2024-01-17,11:45:23,Seattle WA,false,,29,2134.75
+TXN-50012,Leo Garcia,6011-3333-3333-3339,890,4500.00,Jewelry Store,luxury,2024-01-17,13:23:56,New York NY,true,synthetic_identity,55,25678.30
+TXN-50013,Maria Rodriguez,4532-4567-8901-2345,123,67.80,Walmart,retail,2024-01-17,15:12:34,Houston TX,false,,33,3890.40
+TXN-50014,Nathan Moore,5412-6543-2109-8765,456,234.56,Apple Store,electronics,2024-01-17,17:45:11,San Diego CA,false,,37,7234.60
+TXN-50015,Olivia White,3782-822463-40008,789,12.99,Netflix,subscription,2024-01-18,08:34:22,Portland OR,false,,30,1876.90
+TXN-50016,Peter Johnson,6011-4444-4444-4440,234,5600.00,Casino,gambling,2024-01-18,22:15:45,Las Vegas NV,true,unusual_pattern,61,34567.80
+TXN-50017,Quinn Davis,4532-5678-9012-3456,567,156.78,Costco,wholesale,2024-01-18,10:23:12,Seattle WA,false,,44,8901.25
+TXN-50018,Rachel Martinez,5412-5432-1098-7654,890,89.00,CVS Pharmacy,pharmacy,2024-01-18,12:45:33,Boston MA,false,,27,2345.70
+TXN-50019,Sam Wilson,3782-822463-50009,123,3400.00,Airline Tickets,travel,2024-01-18,14:12:56,Chicago IL,false,,50,16789.50
+TXN-50020,Tina Brown,6011-5555-5555-5551,456,78.90,Restaurant,food_beverage,2024-01-18,19:34:21,Miami FL,false,,32,4123.80
+TXN-50021,Uma Patel,4532-6789-0123-4567,789,2100.00,Electronics,electronics,2024-01-19,11:23:45,San Francisco CA,true,card_testing,38,9876.40
+TXN-50022,Victor Lee,5412-4321-0987-6543,234,45.60,Subway,food_beverage,2024-01-19,13:12:34,Austin TX,false,,29,1567.90
+TXN-50023,Wendy Chen,3782-822463-60010,567,890.00,Furniture Store,home_goods,2024-01-19,15:45:22,Denver CO,false,,41,7890.30
+TXN-50024,Xavier Kim,6011-6666-6666-6662,890,156.78,Gas Station,fuel,2024-01-19,17:23:11,Phoenix AZ,false,,36,3456.70
+TXN-50025,Yara Anderson,4532-7890-1234-5678,123,6700.00,Luxury Goods,luxury,2024-01-19,20:12:45,Los Angeles CA,true,velocity_check,47,18901.60
+TXN-50026,Zack Taylor,5412-3210-9876-5432,456,234.50,Bookstore,retail,2024-01-20,09:34:23,Seattle WA,false,,31,4567.20
+TXN-50027,Amy Garcia,3782-822463-70011,789,67.89,Coffee Shop,food_beverage,2024-01-20,11:12:56,Portland OR,false,,28,2123.50
+TXN-50028,Ben Rodriguez,6011-7777-7777-7773,234,4500.00,Hotel,travel,2024-01-20,13:45:34,New York NY,false,,53,21345.80
+TXN-50029,Chloe Moore,4532-8901-2345-6789,567,123.45,Pharmacy,pharmacy,2024-01-20,15:23:12,Boston MA,false,,35,5678.90
+TXN-50030,Dan White,5412-2109-8765-4321,890,7800.00,Car Rental,travel,2024-01-20,18:12:45,Miami FL,true,cross_border,49,23456.70

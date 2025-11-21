@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "config_id": "config_f42185a61003",
+    "name": "Synthetic Data from test_customers",
+    "description": "CSV upload workflow for test_customers.csv",
+    "tags": [
+      "csv",
+      "upload"
+    ],
+    "created_at": "2025-11-21T10:03:31.532354",
+    "updated_at": "2025-11-21T10:03:31.532412",
+    "created_by": "system",
+    "version": "1.0"
+  },
+  "schema_definition": {
+    "source_type": "csv",
+    "source_path": "data/uploads/test_customers_20251121_100331.csv",
+    "fields": [
+      {
+        "name": "customer_id",
+        "type": "object",
+        "nullable": false
+      },
+      {
+        "name": "email",
+        "type": "object",
+        "nullable": false
+      }
+    ]
+  },
+  "generation_parameters": {
+    "num_records": 20,
+    "sdv_model": "gaussian_copula",
+    "random_seed": null
+  },
+  "edge_case_rules": {
+    "edge_case_frequency": 0.1,
+    "preserve_edge_cases": true
+  },
+  "target_system_settings": {
+    "type": "synthetic_data",
+    "bedrock_model": "anthropic.claude-3-sonnet-20240229-v1:0",
+    "temperature": 0.7,
+    "max_tokens": 2000
+  },
+  "additional_settings": {}
+}

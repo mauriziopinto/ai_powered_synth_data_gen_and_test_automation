@@ -1,0 +1,1273 @@
+{
+  "workflow_id": "wf_csv_20251120_184648",
+  "status": "completed",
+  "config_id": "config_5371f96b1166",
+  "num_records": 40,
+  "started_at": "2025-11-20T18:46:48.595326",
+  "updated_at": "2025-11-20T18:47:36.480072",
+  "progress": 100.0,
+  "current_stage": "completed",
+  "stages_completed": [
+    "data_processing",
+    "analysis_complete",
+    "synthetic_generation",
+    "completed"
+  ],
+  "workflow_name": "Synthetic Data from telecom_customers",
+  "source_file": "data/uploads/telecom_customers_20251120_184648.csv",
+  "original_filename": "telecom_customers.csv",
+  "configuration": {
+    "sdv_model": "gaussian_copula",
+    "bedrock_model": "anthropic.claude-3-sonnet-20240229-v1:0",
+    "num_records": 40,
+    "edge_case_frequency": 0.1,
+    "preserve_edge_cases": true
+  },
+  "agent_logs": [
+    {
+      "timestamp": "2025-11-20 18:46:51.836354",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Data loading complete: 20 rows, 18 columns",
+      "metadata": {
+        "source_rows": 20,
+        "source_columns": 18
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:51.836420",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Sensitivity analysis complete: 9 sensitive fields, 9 non-sensitive fields",
+      "metadata": {
+        "sensitive_count": 9,
+        "non_sensitive_count": 9,
+        "sensitive_fields": [
+          "customer_id",
+          "email",
+          "phone",
+          "address",
+          "city",
+          "state",
+          "postal_code",
+          "registration_date",
+          "last_payment_date"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:51.836473",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Training SDV model: gaussian_copula",
+      "metadata": {
+        "model_type": "gaussian_copula",
+        "model_params": {
+          "epochs": 300,
+          "batch_size": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:52.054065",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "SDV generation complete: 40 rows, 11 fields",
+      "metadata": {
+        "generated_rows": 40,
+        "sdv_fields": [
+          "name",
+          "data_usage_gb",
+          "call_minutes",
+          "sms_count",
+          "account_balance",
+          "plan_type",
+          "device_type",
+          "network_type",
+          "account_status",
+          "registration_date",
+          "last_payment_date"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:52.054115",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Bedrock check: bedrock_client=True, bedrock_fields=['customer_id', 'email', 'phone', 'address', 'city', 'state', 'postal_code']",
+      "metadata": {
+        "has_bedrock_client": true,
+        "bedrock_fields_list": [
+          "customer_id",
+          "email",
+          "phone",
+          "address",
+          "city",
+          "state",
+          "postal_code"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:52.054125",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Starting Bedrock generation for 7 fields",
+      "metadata": {
+        "bedrock_fields": [
+          "customer_id",
+          "email",
+          "phone",
+          "address",
+          "city",
+          "state",
+          "postal_code"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:52.054178",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'customer_id' with Bedrock LLM",
+      "metadata": {
+        "field_name": "customer_id",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:46:56.053384",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'email' with Bedrock LLM",
+      "metadata": {
+        "field_name": "email",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:02.248892",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'phone' with Bedrock LLM",
+      "metadata": {
+        "field_name": "phone",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:09.212301",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'address' with Bedrock LLM",
+      "metadata": {
+        "field_name": "address",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:24.393104",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'city' with Bedrock LLM",
+      "metadata": {
+        "field_name": "city",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:28.935597",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'state' with Bedrock LLM",
+      "metadata": {
+        "field_name": "state",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:32.119757",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'postal_code' with Bedrock LLM",
+      "metadata": {
+        "field_name": "postal_code",
+        "field_type": "string",
+        "num_values": 40
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:36.393835",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Bedrock generation complete for 7 fields",
+      "metadata": {
+        "fields_processed": 7
+      }
+    },
+    {
+      "timestamp": "2025-11-20 18:47:36.473301",
+      "workflow_id": "wf_csv_20251120_184648",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Synthetic data generation complete: 40 rows, quality score: 0.664",
+      "metadata": {
+        "total_rows": 40,
+        "quality_score": 0.6636990902629456,
+        "edge_cases_injected": true
+      }
+    }
+  ],
+  "analysis_results": {
+    "total_fields": 18,
+    "sensitive_fields": 9,
+    "field_details": [
+      {
+        "name": "customer_id",
+        "is_sensitive": true,
+        "sensitivity_type": "postal_code",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected postal_code format in 100% of samples; name: Field name \"customer_id\" contains keyword \"customer_id\" indicating account; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "name",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.4000000000000001,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "email",
+        "is_sensitive": true,
+        "sensitivity_type": "email",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected email format in 95% of samples; name: Field name \"email\" contains keyword \"email\" indicating email; content: High uniqueness (100.00%), long strings (avg 20 chars), and special characters suggest potential PII"
+      },
+      {
+        "name": "phone",
+        "is_sensitive": true,
+        "sensitivity_type": "phone",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"phone\" contains keyword \"phone\" indicating phone; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "address",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"address\" contains keyword \"address\" indicating address; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "city",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"city\" contains keyword \"city\" indicating address"
+      },
+      {
+        "name": "state",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"state\" contains keyword \"state\" indicating address"
+      },
+      {
+        "name": "postal_code",
+        "is_sensitive": true,
+        "sensitivity_type": "postal_code",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected postal_code format in 95% of samples; name: Field name \"postal_code\" contains keyword \"postal\" indicating address; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "data_usage_gb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "call_minutes",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "sms_count",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "account_balance",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "plan_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "account_status",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "registration_date",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "last_payment_date",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples"
+      }
+    ],
+    "sample_data": [
+      {
+        "customer_id": "CUST-10001",
+        "name": "John Smith",
+        "email": "john.smith@email.com",
+        "phone": "+1-555-0123",
+        "address": "123 Main St",
+        "city": "Seattle",
+        "state": "WA",
+        "postal_code": "98101",
+        "data_usage_gb": 15.3,
+        "call_minutes": 450,
+        "sms_count": 120,
+        "account_balance": 45.99,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2023-01-15",
+        "last_payment_date": "2024-01-10"
+      },
+      {
+        "customer_id": "CUST-10002",
+        "name": "Maria Garcia",
+        "email": "maria.garcia@mail.com",
+        "phone": "+1-555-0124",
+        "address": "456 Oak Ave",
+        "city": "Portland",
+        "state": "OR",
+        "postal_code": "97201",
+        "data_usage_gb": 8.7,
+        "call_minutes": 320,
+        "sms_count": 85,
+        "account_balance": 29.99,
+        "plan_type": "basic",
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "account_status": "active",
+        "registration_date": "2023-03-22",
+        "last_payment_date": "2024-01-08"
+      },
+      {
+        "customer_id": "CUST-10003",
+        "name": "David Chen",
+        "email": "david.chen@webmail.com",
+        "phone": "555-0125",
+        "address": "789 Pine Rd",
+        "city": "San Francisco",
+        "state": "CA",
+        "postal_code": "94102",
+        "data_usage_gb": 22.1,
+        "call_minutes": 580,
+        "sms_count": 200,
+        "account_balance": 59.99,
+        "plan_type": "premium",
+        "device_type": "tablet",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2022-11-05",
+        "last_payment_date": "2024-01-12"
+      },
+      {
+        "customer_id": "CUST-10004",
+        "name": "Sarah Johnson",
+        "email": "sarah.j@provider.net",
+        "phone": "+1-555-0126",
+        "address": "321 Elm St",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postal_code": "90001",
+        "data_usage_gb": 12.4,
+        "call_minutes": 410,
+        "sms_count": 95,
+        "account_balance": 39.99,
+        "plan_type": "standard",
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "account_status": "active",
+        "registration_date": "2023-06-18",
+        "last_payment_date": "2024-01-09"
+      },
+      {
+        "customer_id": "CUST-10005",
+        "name": "Michael Brown",
+        "email": "mbrown@email.com",
+        "phone": "+1-555-INVALID",
+        "address": "654 Maple Dr",
+        "city": "Denver",
+        "state": "CO",
+        "postal_code": "80201",
+        "data_usage_gb": 18.9,
+        "call_minutes": 520,
+        "sms_count": 150,
+        "account_balance": 49.99,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2023-02-10",
+        "last_payment_date": "2024-01-11"
+      }
+    ]
+  },
+  "data_processor_results": {
+    "agent_type": "data_processor",
+    "status": "completed",
+    "total_rows": 20,
+    "total_columns": 18,
+    "columns": [
+      "customer_id",
+      "name",
+      "email",
+      "phone",
+      "address",
+      "city",
+      "state",
+      "postal_code",
+      "data_usage_gb",
+      "call_minutes",
+      "sms_count",
+      "account_balance",
+      "plan_type",
+      "device_type",
+      "network_type",
+      "account_status",
+      "registration_date",
+      "last_payment_date"
+    ],
+    "sample_data": [
+      {
+        "customer_id": "CUST-10001",
+        "name": "John Smith",
+        "email": "john.smith@email.com",
+        "phone": "+1-555-0123",
+        "address": "123 Main St",
+        "city": "Seattle",
+        "state": "WA",
+        "postal_code": "98101",
+        "data_usage_gb": 15.3,
+        "call_minutes": 450,
+        "sms_count": 120,
+        "account_balance": 45.99,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2023-01-15",
+        "last_payment_date": "2024-01-10"
+      },
+      {
+        "customer_id": "CUST-10002",
+        "name": "Maria Garcia",
+        "email": "maria.garcia@mail.com",
+        "phone": "+1-555-0124",
+        "address": "456 Oak Ave",
+        "city": "Portland",
+        "state": "OR",
+        "postal_code": "97201",
+        "data_usage_gb": 8.7,
+        "call_minutes": 320,
+        "sms_count": 85,
+        "account_balance": 29.99,
+        "plan_type": "basic",
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "account_status": "active",
+        "registration_date": "2023-03-22",
+        "last_payment_date": "2024-01-08"
+      },
+      {
+        "customer_id": "CUST-10003",
+        "name": "David Chen",
+        "email": "david.chen@webmail.com",
+        "phone": "555-0125",
+        "address": "789 Pine Rd",
+        "city": "San Francisco",
+        "state": "CA",
+        "postal_code": "94102",
+        "data_usage_gb": 22.1,
+        "call_minutes": 580,
+        "sms_count": 200,
+        "account_balance": 59.99,
+        "plan_type": "premium",
+        "device_type": "tablet",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2022-11-05",
+        "last_payment_date": "2024-01-12"
+      },
+      {
+        "customer_id": "CUST-10004",
+        "name": "Sarah Johnson",
+        "email": "sarah.j@provider.net",
+        "phone": "+1-555-0126",
+        "address": "321 Elm St",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postal_code": "90001",
+        "data_usage_gb": 12.4,
+        "call_minutes": 410,
+        "sms_count": 95,
+        "account_balance": 39.99,
+        "plan_type": "standard",
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "account_status": "active",
+        "registration_date": "2023-06-18",
+        "last_payment_date": "2024-01-09"
+      },
+      {
+        "customer_id": "CUST-10005",
+        "name": "Michael Brown",
+        "email": "mbrown@email.com",
+        "phone": "+1-555-INVALID",
+        "address": "654 Maple Dr",
+        "city": "Denver",
+        "state": "CO",
+        "postal_code": "80201",
+        "data_usage_gb": 18.9,
+        "call_minutes": 520,
+        "sms_count": 150,
+        "account_balance": 49.99,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2023-02-10",
+        "last_payment_date": "2024-01-11"
+      }
+    ],
+    "field_classifications": [
+      {
+        "name": "customer_id",
+        "is_sensitive": true,
+        "sensitivity_type": "postal_code",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected postal_code format in 100% of samples; name: Field name \"customer_id\" contains keyword \"customer_id\" indicating account; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "name",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.4000000000000001,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "email",
+        "is_sensitive": true,
+        "sensitivity_type": "email",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected email format in 95% of samples; name: Field name \"email\" contains keyword \"email\" indicating email; content: High uniqueness (100.00%), long strings (avg 20 chars), and special characters suggest potential PII"
+      },
+      {
+        "name": "phone",
+        "is_sensitive": true,
+        "sensitivity_type": "phone",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"phone\" contains keyword \"phone\" indicating phone; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "address",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"address\" contains keyword \"address\" indicating address; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "city",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"city\" contains keyword \"city\" indicating address"
+      },
+      {
+        "name": "state",
+        "is_sensitive": true,
+        "sensitivity_type": "address",
+        "confidence": 0.85,
+        "strategy": "bedrock_llm",
+        "reasoning": "name: Field name \"state\" contains keyword \"state\" indicating address"
+      },
+      {
+        "name": "postal_code",
+        "is_sensitive": true,
+        "sensitivity_type": "postal_code",
+        "confidence": 0.95,
+        "strategy": "bedrock_llm",
+        "reasoning": "pattern: Pattern matching detected postal_code format in 95% of samples; name: Field name \"postal_code\" contains keyword \"postal\" indicating address; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "data_usage_gb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "call_minutes",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "sms_count",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "account_balance",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "plan_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "account_status",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "registration_date",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "last_payment_date",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples"
+      }
+    ]
+  },
+  "strategy_selections": {
+    "customer_id": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "name": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "email": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "phone": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "address": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "city": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "state": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "postal_code": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "data_usage_gb": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "call_minutes": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "sms_count": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "account_balance": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "plan_type": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "device_type": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "network_type": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "account_status": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "registration_date": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "last_payment_date": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    }
+  },
+  "sdv_model": "gaussian_copula",
+  "sdv_params": {
+    "epochs": 300,
+    "batch_size": 500
+  },
+  "synthetic_data_results": {
+    "agent_type": "synthetic_data",
+    "status": "completed",
+    "columns": [
+      "customer_id",
+      "name",
+      "email",
+      "phone",
+      "address",
+      "city",
+      "state",
+      "postal_code",
+      "data_usage_gb",
+      "call_minutes",
+      "sms_count",
+      "account_balance",
+      "plan_type",
+      "device_type",
+      "network_type",
+      "account_status",
+      "registration_date",
+      "last_payment_date"
+    ],
+    "total_records_generated": 40,
+    "sample_data": [
+      {
+        "customer_id": "C0012345",
+        "name": "sdv-id-foppRp",
+        "email": "john.doe@example.com",
+        "phone": "(555) 555-5555",
+        "address": "123 Main St, Anytown USA 12345",
+        "city": "New York City",
+        "state": "California",
+        "postal_code": "90001",
+        "data_usage_gb": 25.9,
+        "call_minutes": 633,
+        "sms_count": 220,
+        "account_balance": 65.04,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "2023-02-15",
+        "last_payment_date": "2024-01-13"
+      },
+      {
+        "customer_id": "B7890123",
+        "name": "sdv-id-ijPyNf",
+        "email": "jane.smith@gmail.com",
+        "phone": "1-800-555-5555",
+        "address": "Flat 2B, 14 Oak Road, London E3 5TH",
+        "city": "   ",
+        "state": "Texas",
+        "postal_code": "63109",
+        "data_usage_gb": 17.0,
+        "call_minutes": 474,
+        "sms_count": 136,
+        "account_balance": 54.02,
+        "plan_type": "premium",
+        "device_type": "tablet",
+        "network_type": "5G",
+        "account_status": "suspended",
+        "registration_date": "2023-03-11",
+        "last_payment_date": "2024-01-08"
+      },
+      {
+        "customer_id": "A4567890",
+        "name": "sdv-id-lvVwST",
+        "email": "alex.johnson@hotmail.com",
+        "phone": "(123) 456-7890",
+        "address": "42 Rue de Rivoli, 75004 Paris, France",
+        "city": "Chicago",
+        "state": "Florida",
+        "postal_code": "07097",
+        "data_usage_gb": 11.0,
+        "call_minutes": 361,
+        "sms_count": 96,
+        "account_balance": 33.7,
+        "plan_type": "premium",
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "account_status": "active",
+        "registration_date": "2023-08-26",
+        "last_payment_date": "2024-01-13"
+      },
+      {
+        "customer_id": "X9876543",
+        "name": "sdv-id-XgKVXr",
+        "email": "michael.brown@yahoo.com",
+        "phone": "555-0123",
+        "address": "3-25-8 Nishiazabu, Minato-ku, Tokyo 106-0031, Japan",
+        "city": "Houston",
+        "state": "New York",
+        "postal_code": "33162",
+        "data_usage_gb": 9.9,
+        "call_minutes": -350,
+        "sms_count": 84,
+        "account_balance": 35.81,
+        "plan_type": "standard",
+        "device_type": "smartphone",
+        "network_type": "3G",
+        "account_status": "suspended",
+        "registration_date": "2023-08-01",
+        "last_payment_date": "2024-01-09"
+      },
+      {
+        "customer_id": "P2109876",
+        "name": "sdv-id-BdPglw",
+        "email": "emily.davis@outlook.com",
+        "phone": "(202) 555-0176",
+        "address": "7 Tanjong Pagar Plaza, #02-105, Singapore 081007",
+        "city": "Phoenix",
+        "state": "Illinois",
+        "postal_code": "53209",
+        "data_usage_gb": -18.8,
+        "call_minutes": 503,
+        "sms_count": 143,
+        "account_balance": 57.08,
+        "plan_type": "standard",
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "account_status": "active",
+        "registration_date": "",
+        "last_payment_date": "2024-01-04"
+      }
+    ],
+    "quality_metrics": {
+      "sdv_quality_score": 0.6636990902629456,
+      "column_shapes": {},
+      "column_pair_trends": {},
+      "column_shapes_score": 0.8490131775822354,
+      "column_pair_trends_score": 0.47838500294365577,
+      "field_scores": {},
+      "ks_tests": {
+        "data_usage_gb": {
+          "statistic": 0.175,
+          "pvalue": 0.7952733296397471
+        },
+        "call_minutes": {
+          "statistic": 0.15,
+          "pvalue": 0.9175586699280374
+        },
+        "sms_count": {
+          "statistic": 0.15,
+          "pvalue": 0.9175586699280374
+        },
+        "account_balance": {
+          "statistic": 0.15,
+          "pvalue": 0.9175586699280374
+        }
+      },
+      "chi_squared_tests": {},
+      "wasserstein_distances": {},
+      "correlation_preservation": 0.45659336080745383,
+      "edge_case_frequency_match": 1.0,
+      "column_order_preserved": true,
+      "column_order_report": {
+        "order_preserved": true,
+        "original_order": [
+          "customer_id",
+          "name",
+          "email",
+          "phone",
+          "address",
+          "city",
+          "state",
+          "postal_code",
+          "data_usage_gb",
+          "call_minutes",
+          "sms_count",
+          "account_balance",
+          "plan_type",
+          "device_type",
+          "network_type",
+          "account_status",
+          "registration_date",
+          "last_payment_date"
+        ],
+        "synthetic_order": [
+          "customer_id",
+          "name",
+          "email",
+          "phone",
+          "address",
+          "city",
+          "state",
+          "postal_code",
+          "data_usage_gb",
+          "call_minutes",
+          "sms_count",
+          "account_balance",
+          "plan_type",
+          "device_type",
+          "network_type",
+          "account_status",
+          "registration_date",
+          "last_payment_date"
+        ],
+        "original_count": 18,
+        "synthetic_count": 18
+      },
+      "data_validity_score": 0.822542735042735,
+      "data_structure_score": 0.0,
+      "diagnostic_details": {},
+      "nearest_neighbor_distances": {
+        "mean_distance": 1.0770436231015936,
+        "median_distance": 0.3646887371496257,
+        "min_distance": 0.0,
+        "max_distance": 6.7740231635335215,
+        "std_distance": 1.7424164927134196,
+        "samples_evaluated": 40,
+        "interpretation": "Higher distances indicate better privacy (less data leakage)"
+      },
+      "generated_at": "2025-11-20 18:47:36.473103",
+      "visualizations": {}
+    },
+    "generation_metadata": {
+      "sdv_model": "gaussian_copula",
+      "sdv_params": {
+        "epochs": 300,
+        "batch_size": 500
+      },
+      "source_rows": 20,
+      "generated_rows": 40,
+      "sensitive_fields": [
+        "customer_id",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "registration_date",
+        "last_payment_date"
+      ],
+      "non_sensitive_fields": [
+        "name",
+        "data_usage_gb",
+        "call_minutes",
+        "sms_count",
+        "account_balance",
+        "plan_type",
+        "device_type",
+        "network_type",
+        "account_status"
+      ],
+      "generation_timestamp": "2025-11-20T18:47:36.473263",
+      "edge_cases_injected": true,
+      "edge_case_injection_result": {
+        "total_records": 40,
+        "injected_count": 22,
+        "injected_indices": [
+          1,
+          3,
+          4,
+          7,
+          8,
+          9,
+          11,
+          13,
+          14,
+          16,
+          17,
+          18,
+          19,
+          21,
+          25,
+          26,
+          27,
+          30,
+          32,
+          34,
+          37,
+          38
+        ],
+        "edge_case_tags": {
+          "19": [
+            "empty_string",
+            "empty_string"
+          ],
+          "16": [
+            "null_value"
+          ],
+          "4": [
+            "negative_value",
+            "empty_string"
+          ],
+          "37": [
+            "negative_value",
+            "null_value"
+          ],
+          "3": [
+            "negative_value"
+          ],
+          "34": [
+            "negative_value",
+            "whitespace_only"
+          ],
+          "17": [
+            "zero_value",
+            "empty_string"
+          ],
+          "11": [
+            "zero_value"
+          ],
+          "21": [
+            "negative_value",
+            "whitespace_only",
+            "whitespace_only",
+            "empty_string",
+            "empty_string"
+          ],
+          "30": [
+            "negative_value",
+            "special_characters"
+          ],
+          "7": [
+            "empty_string",
+            "malformed_phone",
+            "invalid_postcode"
+          ],
+          "32": [
+            "special_characters",
+            "empty_string"
+          ],
+          "38": [
+            "null_value"
+          ],
+          "27": [
+            "null_value"
+          ],
+          "25": [
+            "whitespace_only",
+            "malformed_email"
+          ],
+          "18": [
+            "special_characters"
+          ],
+          "8": [
+            "empty_string"
+          ],
+          "14": [
+            "empty_string"
+          ],
+          "26": [
+            "malformed_email"
+          ],
+          "9": [
+            "malformed_phone"
+          ],
+          "1": [
+            "whitespace_only"
+          ],
+          "13": [
+            "invalid_postcode"
+          ]
+        },
+        "frequency_achieved": 0.55
+      },
+      "generation_method": "Hybrid (Bedrock: 7 fields, SDV: 11 fields)",
+      "bedrock_fields": [
+        "customer_id",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code"
+      ],
+      "sdv_fields": [
+        "name",
+        "data_usage_gb",
+        "call_minutes",
+        "sms_count",
+        "account_balance",
+        "plan_type",
+        "device_type",
+        "network_type",
+        "account_status",
+        "registration_date",
+        "last_payment_date"
+      ],
+      "original_column_order": [
+        "customer_id",
+        "name",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "data_usage_gb",
+        "call_minutes",
+        "sms_count",
+        "account_balance",
+        "plan_type",
+        "device_type",
+        "network_type",
+        "account_status",
+        "registration_date",
+        "last_payment_date"
+      ],
+      "final_column_order": [
+        "customer_id",
+        "name",
+        "email",
+        "phone",
+        "address",
+        "city",
+        "state",
+        "postal_code",
+        "data_usage_gb",
+        "call_minutes",
+        "sms_count",
+        "account_balance",
+        "plan_type",
+        "device_type",
+        "network_type",
+        "account_status",
+        "registration_date",
+        "last_payment_date"
+      ],
+      "column_order_preserved": true
+    }
+  },
+  "synthetic_data_file": "data/synthetic/wf_csv_20251120_184648_synthetic.csv",
+  "completed_at": "2025-11-20T18:47:36.480070"
+}

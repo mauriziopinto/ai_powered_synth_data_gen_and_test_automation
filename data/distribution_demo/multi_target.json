@@ -1,0 +1,42 @@
+[
+  {
+    "Name":"Acme Corp",
+    "Type":"Customer",
+    "Industry":"Technology",
+    "External_Id__c":"ACC001",
+    "Revenue":1000000,
+    "Employees":50
+  },
+  {
+    "Name":"Global Inc",
+    "Type":"Partner",
+    "Industry":"Manufacturing",
+    "External_Id__c":"ACC002",
+    "Revenue":2500000,
+    "Employees":200
+  },
+  {
+    "Name":"Tech Solutions",
+    "Type":"Customer",
+    "Industry":"Technology",
+    "External_Id__c":"ACC003",
+    "Revenue":750000,
+    "Employees":30
+  },
+  {
+    "Name":"Data Systems",
+    "Type":"Partner",
+    "Industry":"Finance",
+    "External_Id__c":"ACC004",
+    "Revenue":1800000,
+    "Employees":150
+  },
+  {
+    "Name":"Cloud Services",
+    "Type":"Customer",
+    "Industry":"Technology",
+    "External_Id__c":"ACC005",
+    "Revenue":3200000,
+    "Employees":400
+  }
+]

@@ -29,6 +29,7 @@ ENV/
 # IDE
 .vscode/
 .idea/
+.kiro/
 *.swp
 *.swo
 *~
@@ -64,3 +65,6 @@ data/synthetic/*
 results/*
 !data/.gitkeep
 !results/.gitkeep
+
+# Unused files and archives
+other/

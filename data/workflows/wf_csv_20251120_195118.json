@@ -1,0 +1,281 @@
+{
+  "workflow_id": "wf_csv_20251120_195118",
+  "status": "awaiting_strategy_selection",
+  "config_id": "config_81b63090973d",
+  "num_records": 200,
+  "started_at": "2025-11-20T19:51:18.364192",
+  "updated_at": "2025-11-20T19:51:18.375637",
+  "progress": 40.0,
+  "current_stage": "strategy_selection",
+  "stages_completed": [
+    "data_processing",
+    "analysis_complete"
+  ],
+  "workflow_name": "Synthetic Data from MGW_File",
+  "source_file": "data/uploads/MGW_File_20251120_195118.csv",
+  "original_filename": "MGW_File.csv",
+  "configuration": {
+    "sdv_model": "gaussian_copula",
+    "bedrock_model": "anthropic.claude-3-sonnet-20240229-v1:0",
+    "num_records": 200,
+    "edge_case_frequency": 0.1,
+    "preserve_edge_cases": true
+  },
+  "agent_logs": [],
+  "analysis_results": {
+    "total_fields": 8,
+    "sensitive_fields": 1,
+    "field_details": [
+      {
+        "name": "timestamp",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "session_duration",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "data_usage_mb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "signal_strength",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "battery_level",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "app_category",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      }
+    ],
+    "sample_data": [
+      {
+        "timestamp": "2024-01-01 00:00:00",
+        "session_duration": 59.93428306022465,
+        "data_usage_mb": 5.846292579495858,
+        "signal_strength": -72.13770111721374,
+        "battery_level": 70.05205986893513,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "communication"
+      },
+      {
+        "timestamp": "2024-01-01 00:15:00",
+        "session_duration": 47.23471397657631,
+        "data_usage_mb": 15.79354677234641,
+        "signal_strength": -70.51372378905413,
+        "battery_level": 73.27782751763637,
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "app_category": "productivity"
+      },
+      {
+        "timestamp": "2024-01-01 00:30:00",
+        "session_duration": 62.953770762013846,
+        "data_usage_mb": 16.572854834732304,
+        "signal_strength": -66.33559005459779,
+        "battery_level": 88.96752326147914,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 00:45:00",
+        "session_duration": 80.4605971281605,
+        "data_usage_mb": 11.97722730778381,
+        "signal_strength": -66.56958358372077,
+        "battery_level": 87.32444318520157,
+        "device_type": "tablet",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 01:00:00",
+        "session_duration": 45.31693250553328,
+        "data_usage_mb": 18.38714288333991,
+        "signal_strength": -86.02135494365673,
+        "battery_level": 79.74918087243022,
+        "device_type": "tablet",
+        "network_type": "5G",
+        "app_category": "entertainment"
+      }
+    ]
+  },
+  "data_processor_results": {
+    "agent_type": "data_processor",
+    "status": "completed",
+    "total_rows": 100,
+    "total_columns": 8,
+    "columns": [
+      "timestamp",
+      "session_duration",
+      "data_usage_mb",
+      "signal_strength",
+      "battery_level",
+      "device_type",
+      "network_type",
+      "app_category"
+    ],
+    "sample_data": [
+      {
+        "timestamp": "2024-01-01 00:00:00",
+        "session_duration": 59.93428306022465,
+        "data_usage_mb": 5.846292579495858,
+        "signal_strength": -72.13770111721374,
+        "battery_level": 70.05205986893513,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "communication"
+      },
+      {
+        "timestamp": "2024-01-01 00:15:00",
+        "session_duration": 47.23471397657631,
+        "data_usage_mb": 15.79354677234641,
+        "signal_strength": -70.51372378905413,
+        "battery_level": 73.27782751763637,
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "app_category": "productivity"
+      },
+      {
+        "timestamp": "2024-01-01 00:30:00",
+        "session_duration": 62.953770762013846,
+        "data_usage_mb": 16.572854834732304,
+        "signal_strength": -66.33559005459779,
+        "battery_level": 88.96752326147914,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 00:45:00",
+        "session_duration": 80.4605971281605,
+        "data_usage_mb": 11.97722730778381,
+        "signal_strength": -66.56958358372077,
+        "battery_level": 87.32444318520157,
+        "device_type": "tablet",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 01:00:00",
+        "session_duration": 45.31693250553328,
+        "data_usage_mb": 18.38714288333991,
+        "signal_strength": -86.02135494365673,
+        "battery_level": 79.74918087243022,
+        "device_type": "tablet",
+        "network_type": "5G",
+        "app_category": "entertainment"
+      }
+    ],
+    "field_classifications": [
+      {
+        "name": "timestamp",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "session_duration",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "data_usage_mb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "signal_strength",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "battery_level",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "app_category",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      }
+    ]
+  }
+}

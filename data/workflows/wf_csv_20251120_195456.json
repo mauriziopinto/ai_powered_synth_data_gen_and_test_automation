@@ -1,0 +1,1092 @@
+{
+  "workflow_id": "wf_csv_20251120_195456",
+  "status": "completed",
+  "config_id": "config_2a505c755666",
+  "num_records": 300,
+  "started_at": "2025-11-20T19:54:56.235608",
+  "updated_at": "2025-11-20T19:58:15.422261",
+  "progress": 100.0,
+  "current_stage": "completed",
+  "stages_completed": [
+    "data_processing",
+    "analysis_complete",
+    "synthetic_generation",
+    "completed"
+  ],
+  "workflow_name": "Synthetic Data from MGW_File",
+  "source_file": "data/uploads/MGW_File_20251120_195456.csv",
+  "original_filename": "MGW_File.csv",
+  "configuration": {
+    "sdv_model": "gaussian_copula",
+    "bedrock_model": "anthropic.claude-3-haiku-20240307-v1:0",
+    "num_records": 300,
+    "edge_case_frequency": 0.1,
+    "preserve_edge_cases": true
+  },
+  "agent_logs": [
+    {
+      "timestamp": "2025-11-20 19:55:51.722660",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Data loading complete: 100 rows, 8 columns",
+      "metadata": {
+        "source_rows": 100,
+        "source_columns": 8
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.722778",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Sensitivity analysis complete: 1 sensitive fields, 7 non-sensitive fields",
+      "metadata": {
+        "sensitive_count": 1,
+        "non_sensitive_count": 7,
+        "sensitive_fields": [
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.722848",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Training SDV model: gaussian_copula",
+      "metadata": {
+        "model_type": "gaussian_copula",
+        "model_params": {
+          "epochs": 300,
+          "batch_size": 500
+        }
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.817683",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "SDV generation complete: 300 rows, 5 fields",
+      "metadata": {
+        "generated_rows": 300,
+        "sdv_fields": [
+          "session_duration",
+          "data_usage_mb",
+          "signal_strength",
+          "battery_level",
+          "network_type"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.817719",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Bedrock check: bedrock_client=True, bedrock_fields=['timestamp', 'device_type', 'app_category']",
+      "metadata": {
+        "has_bedrock_client": true,
+        "bedrock_fields_list": [
+          "timestamp",
+          "device_type",
+          "app_category"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.817727",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Starting Bedrock generation for 3 fields",
+      "metadata": {
+        "bedrock_fields": [
+          "timestamp",
+          "device_type",
+          "app_category"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:55:51.817763",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'timestamp' with Bedrock LLM",
+      "metadata": {
+        "field_name": "timestamp",
+        "field_type": "string",
+        "num_values": 300
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:57:18.154163",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'device_type' with Bedrock LLM",
+      "metadata": {
+        "field_name": "device_type",
+        "field_type": "string",
+        "num_values": 300
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:57:47.981514",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Generating field 'app_category' with Bedrock LLM",
+      "metadata": {
+        "field_name": "app_category",
+        "field_type": "string",
+        "num_values": 300
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:58:15.347646",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Bedrock generation complete for 3 fields",
+      "metadata": {
+        "fields_processed": 3
+      }
+    },
+    {
+      "timestamp": "2025-11-20 19:58:15.415092",
+      "workflow_id": "wf_csv_20251120_195456",
+      "agent_name": "SyntheticDataAgent",
+      "level": "info",
+      "message": "Synthetic data generation complete: 300 rows, quality score: 0.809",
+      "metadata": {
+        "total_rows": 300,
+        "quality_score": 0.8090104182920084,
+        "edge_cases_injected": true
+      }
+    }
+  ],
+  "analysis_results": {
+    "total_fields": 8,
+    "sensitive_fields": 1,
+    "field_details": [
+      {
+        "name": "timestamp",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "session_duration",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "data_usage_mb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "signal_strength",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "battery_level",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "app_category",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      }
+    ],
+    "sample_data": [
+      {
+        "timestamp": "2024-01-01 00:00:00",
+        "session_duration": 59.93428306022465,
+        "data_usage_mb": 5.846292579495858,
+        "signal_strength": -72.13770111721374,
+        "battery_level": 70.05205986893513,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "communication"
+      },
+      {
+        "timestamp": "2024-01-01 00:15:00",
+        "session_duration": 47.23471397657631,
+        "data_usage_mb": 15.79354677234641,
+        "signal_strength": -70.51372378905413,
+        "battery_level": 73.27782751763637,
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "app_category": "productivity"
+      },
+      {
+        "timestamp": "2024-01-01 00:30:00",
+        "session_duration": 62.953770762013846,
+        "data_usage_mb": 16.572854834732304,
+        "signal_strength": -66.33559005459779,
+        "battery_level": 88.96752326147914,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 00:45:00",
+        "session_duration": 80.4605971281605,
+        "data_usage_mb": 11.97722730778381,
+        "signal_strength": -66.56958358372077,
+        "battery_level": 87.32444318520157,
+        "device_type": "tablet",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 01:00:00",
+        "session_duration": 45.31693250553328,
+        "data_usage_mb": 18.38714288333991,
+        "signal_strength": -86.02135494365673,
+        "battery_level": 79.74918087243022,
+        "device_type": "tablet",
+        "network_type": "5G",
+        "app_category": "entertainment"
+      }
+    ]
+  },
+  "data_processor_results": {
+    "agent_type": "data_processor",
+    "status": "completed",
+    "total_rows": 100,
+    "total_columns": 8,
+    "columns": [
+      "timestamp",
+      "session_duration",
+      "data_usage_mb",
+      "signal_strength",
+      "battery_level",
+      "device_type",
+      "network_type",
+      "app_category"
+    ],
+    "sample_data": [
+      {
+        "timestamp": "2024-01-01 00:00:00",
+        "session_duration": 59.93428306022465,
+        "data_usage_mb": 5.846292579495858,
+        "signal_strength": -72.13770111721374,
+        "battery_level": 70.05205986893513,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "communication"
+      },
+      {
+        "timestamp": "2024-01-01 00:15:00",
+        "session_duration": 47.23471397657631,
+        "data_usage_mb": 15.79354677234641,
+        "signal_strength": -70.51372378905413,
+        "battery_level": 73.27782751763637,
+        "device_type": "smartphone",
+        "network_type": "5G",
+        "app_category": "productivity"
+      },
+      {
+        "timestamp": "2024-01-01 00:30:00",
+        "session_duration": 62.953770762013846,
+        "data_usage_mb": 16.572854834732304,
+        "signal_strength": -66.33559005459779,
+        "battery_level": 88.96752326147914,
+        "device_type": "smartphone",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 00:45:00",
+        "session_duration": 80.4605971281605,
+        "data_usage_mb": 11.97722730778381,
+        "signal_strength": -66.56958358372077,
+        "battery_level": 87.32444318520157,
+        "device_type": "tablet",
+        "network_type": "4G",
+        "app_category": "social"
+      },
+      {
+        "timestamp": "2024-01-01 01:00:00",
+        "session_duration": 45.31693250553328,
+        "data_usage_mb": 18.38714288333991,
+        "signal_strength": -86.02135494365673,
+        "battery_level": 79.74918087243022,
+        "device_type": "tablet",
+        "network_type": "5G",
+        "app_category": "entertainment"
+      }
+    ],
+    "field_classifications": [
+      {
+        "name": "timestamp",
+        "is_sensitive": true,
+        "sensitivity_type": "date_of_birth",
+        "confidence": 0.95,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "pattern: Pattern matching detected date_of_birth format in 100% of samples; content: Very high uniqueness (100.00%) suggests unique identifier or name"
+      },
+      {
+        "name": "session_duration",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "data_usage_mb",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (100.00%) suggests unique identifier"
+      },
+      {
+        "name": "signal_strength",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "battery_level",
+        "is_sensitive": false,
+        "sensitivity_type": "identifier",
+        "confidence": 0.6,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "content: High cardinality (96.00%) suggests unique identifier"
+      },
+      {
+        "name": "device_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "network_type",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      },
+      {
+        "name": "app_category",
+        "is_sensitive": false,
+        "sensitivity_type": "non_sensitive",
+        "confidence": 0.0,
+        "strategy": "sdv_preserve_distribution",
+        "reasoning": "No classifier detected sensitive data"
+      }
+    ]
+  },
+  "strategy_selections": {
+    "timestamp": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "session_duration": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "data_usage_mb": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "signal_strength": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "battery_level": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "device_type": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    },
+    "network_type": {
+      "strategy": "sdv_preserve_distribution",
+      "custom_params": {}
+    },
+    "app_category": {
+      "strategy": "bedrock_llm",
+      "custom_params": {}
+    }
+  },
+  "sdv_model": "gaussian_copula",
+  "sdv_params": {
+    "epochs": 300,
+    "batch_size": 500
+  },
+  "estimated_cost_usd": 0.07245000000000001,
+  "completed_at": "2025-11-20T19:58:15.422258",
+  "synthetic_data_results": {
+    "agent_type": "synthetic_data",
+    "status": "completed",
+    "columns": [
+      "timestamp",
+      "session_duration",
+      "data_usage_mb",
+      "signal_strength",
+      "battery_level",
+      "device_type",
+      "network_type",
+      "app_category"
+    ],
+    "total_records_generated": 300,
+    "sample_data": [
+      {
+        "timestamp": "2023-04-22 14:32:11",
+        "session_duration": 57.15150120707062,
+        "data_usage_mb": 19.456286806830995,
+        "signal_strength": -66.66485263940359,
+        "battery_level": 66.31582123877702,
+        "device_type": "Laptop",
+        "network_type": "5G",
+        "app_category": "Games"
+      },
+      {
+        "timestamp": "2023-01-15 09:18:27",
+        "session_duration": 47.42797054281937,
+        "data_usage_mb": 19.703153538979983,
+        "signal_strength": -78.31264176469416,
+        "battery_level": 89.81636995837147,
+        "device_type": "Desktop",
+        "network_type": "5G",
+        "app_category": "Education"
+      },
+      {
+        "timestamp": "2022-11-03 21:45:39",
+        "session_duration": 70.19049625922105,
+        "data_usage_mb": 25.85510841541398,
+        "signal_strength": -82.71654491408093,
+        "battery_level": 62.146170737017584,
+        "device_type": "Tablet",
+        "network_type": "5G",
+        "app_category": "Productivity"
+      },
+      {
+        "timestamp": "2023-03-07 05:52:01",
+        "session_duration": 33.406389329691706,
+        "data_usage_mb": 23.877349446173376,
+        "signal_strength": -70.90288470925105,
+        "battery_level": 82.48133385192509,
+        "device_type": "Smartphone",
+        "network_type": "4G",
+        "app_category": "Entertainment"
+      },
+      {
+        "timestamp": "2022-08-19 17:23:54",
+        "session_duration": 21.015739555590642,
+        "data_usage_mb": 6.308665356908589,
+        "signal_strength": -67.79433339048272,
+        "battery_level": 86.21142780593803,
+        "device_type": "Smart TV",
+        "network_type": "5G",
+        "app_category": "Lifestyle"
+      }
+    ],
+    "quality_metrics": {
+      "sdv_quality_score": 0.8090104182920084,
+      "column_shapes": {},
+      "column_pair_trends": {},
+      "column_shapes_score": 0.9018918962918917,
+      "column_pair_trends_score": 0.7161289402921251,
+      "field_scores": {},
+      "ks_tests": {
+        "session_duration": {
+          "statistic": 0.09,
+          "pvalue": 0.5635755425334971
+        },
+        "data_usage_mb": {
+          "statistic": 0.10333333333333333,
+          "pvalue": 0.3874916970869029
+        },
+        "signal_strength": {
+          "statistic": 0.08666666666666667,
+          "pvalue": 0.6116890946313486
+        },
+        "battery_level": {
+          "statistic": 0.12,
+          "pvalue": 0.22161880097603315
+        }
+      },
+      "chi_squared_tests": {},
+      "wasserstein_distances": {},
+      "correlation_preservation": 0.9359853565293061,
+      "edge_case_frequency_match": 1.0,
+      "column_order_preserved": true,
+      "column_order_report": {
+        "order_preserved": true,
+        "original_order": [
+          "timestamp",
+          "session_duration",
+          "data_usage_mb",
+          "signal_strength",
+          "battery_level",
+          "device_type",
+          "network_type",
+          "app_category"
+        ],
+        "synthetic_order": [
+          "timestamp",
+          "session_duration",
+          "data_usage_mb",
+          "signal_strength",
+          "battery_level",
+          "device_type",
+          "network_type",
+          "app_category"
+        ],
+        "original_count": 8,
+        "synthetic_count": 8
+      },
+      "data_validity_score": 0.9776666666666667,
+      "data_structure_score": 0.0,
+      "diagnostic_details": {},
+      "nearest_neighbor_distances": {
+        "mean_distance": 1.490198236848339,
+        "median_distance": 0.850537206699262,
+        "min_distance": 0.25210202628931855,
+        "max_distance": 14.979505674378535,
+        "std_distance": 2.193799110347391,
+        "samples_evaluated": 300,
+        "interpretation": "Higher distances indicate better privacy (less data leakage)"
+      },
+      "generated_at": "2025-11-20 19:58:15.414818",
+      "visualizations": {}
+    },
+    "generation_metadata": {
+      "sdv_model": "gaussian_copula",
+      "sdv_params": {
+        "epochs": 300,
+        "batch_size": 500
+      },
+      "source_rows": 100,
+      "generated_rows": 300,
+      "sensitive_fields": [
+        "timestamp"
+      ],
+      "non_sensitive_fields": [
+        "session_duration",
+        "data_usage_mb",
+        "signal_strength",
+        "battery_level",
+        "device_type",
+        "network_type",
+        "app_category"
+      ],
+      "generation_timestamp": "2025-11-20T19:58:15.415007",
+      "edge_cases_injected": true,
+      "edge_case_injection_result": {
+        "total_records": 300,
+        "injected_count": 100,
+        "injected_indices": [
+          5,
+          8,
+          9,
+          11,
+          15,
+          17,
+          21,
+          22,
+          30,
+          31,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          47,
+          50,
+          55,
+          56,
+          57,
+          61,
+          65,
+          66,
+          67,
+          68,
+          70,
+          77,
+          81,
+          86,
+          90,
+          91,
+          92,
+          93,
+          95,
+          96,
+          97,
+          99,
+          109,
+          113,
+          118,
+          127,
+          128,
+          133,
+          134,
+          139,
+          145,
+          152,
+          153,
+          159,
+          160,
+          164,
+          166,
+          169,
+          171,
+          173,
+          175,
+          178,
+          182,
+          188,
+          194,
+          195,
+          196,
+          200,
+          202,
+          203,
+          206,
+          209,
+          213,
+          216,
+          218,
+          221,
+          222,
+          224,
+          226,
+          232,
+          233,
+          235,
+          237,
+          238,
+          240,
+          241,
+          242,
+          243,
+          250,
+          251,
+          252,
+          253,
+          254,
+          258,
+          261,
+          263,
+          266,
+          269,
+          271,
+          274,
+          277,
+          291,
+          295
+        ],
+        "edge_case_tags": {
+          "203": [
+            "negative_value"
+          ],
+          "266": [
+            "zero_value",
+            "negative_value",
+            "whitespace_only"
+          ],
+          "152": [
+            "negative_value",
+            "null_value"
+          ],
+          "9": [
+            "zero_value"
+          ],
+          "233": [
+            "negative_value"
+          ],
+          "226": [
+            "zero_value"
+          ],
+          "196": [
+            "negative_value"
+          ],
+          "109": [
+            "negative_value"
+          ],
+          "5": [
+            "negative_value",
+            "zero_value",
+            "null_value"
+          ],
+          "175": [
+            "zero_value"
+          ],
+          "237": [
+            "zero_value"
+          ],
+          "57": [
+            "negative_value",
+            "whitespace_only"
+          ],
+          "218": [
+            "negative_value"
+          ],
+          "45": [
+            "zero_value",
+            "special_characters"
+          ],
+          "182": [
+            "negative_value"
+          ],
+          "241": [
+            "zero_value"
+          ],
+          "243": [
+            "negative_value",
+            "empty_string",
+            "special_characters"
+          ],
+          "216": [
+            "negative_value"
+          ],
+          "213": [
+            "negative_value"
+          ],
+          "44": [
+            "zero_value"
+          ],
+          "235": [
+            "negative_value"
+          ],
+          "164": [
+            "zero_value"
+          ],
+          "77": [
+            "zero_value"
+          ],
+          "40": [
+            "negative_value"
+          ],
+          "145": [
+            "negative_value"
+          ],
+          "31": [
+            "negative_value",
+            "empty_string"
+          ],
+          "55": [
+            "zero_value"
+          ],
+          "90": [
+            "negative_value"
+          ],
+          "202": [
+            "zero_value",
+            "zero_value"
+          ],
+          "242": [
+            "zero_value"
+          ],
+          "133": [
+            "zero_value"
+          ],
+          "139": [
+            "zero_value"
+          ],
+          "221": [
+            "negative_value"
+          ],
+          "66": [
+            "negative_value",
+            "special_characters",
+            "null_value"
+          ],
+          "251": [
+            "negative_value",
+            "negative_value"
+          ],
+          "61": [
+            "zero_value"
+          ],
+          "171": [
+            "zero_value"
+          ],
+          "159": [
+            "negative_value"
+          ],
+          "113": [
+            "zero_value"
+          ],
+          "67": [
+            "negative_value",
+            "null_value"
+          ],
+          "178": [
+            "negative_value"
+          ],
+          "99": [
+            "negative_value"
+          ],
+          "15": [
+            "negative_value",
+            "special_characters"
+          ],
+          "8": [
+            "zero_value"
+          ],
+          "11": [
+            "negative_value"
+          ],
+          "254": [
+            "zero_value"
+          ],
+          "253": [
+            "negative_value"
+          ],
+          "92": [
+            "zero_value"
+          ],
+          "232": [
+            "zero_value"
+          ],
+          "81": [
+            "negative_value"
+          ],
+          "43": [
+            "zero_value"
+          ],
+          "128": [
+            "zero_value",
+            "special_characters"
+          ],
+          "188": [
+            "zero_value"
+          ],
+          "153": [
+            "zero_value"
+          ],
+          "166": [
+            "negative_value"
+          ],
+          "160": [
+            "zero_value"
+          ],
+          "21": [
+            "special_characters"
+          ],
+          "269": [
+            "null_value"
+          ],
+          "50": [
+            "special_characters",
+            "empty_string"
+          ],
+          "22": [
+            "special_characters"
+          ],
+          "238": [
+            "empty_string"
+          ],
+          "96": [
+            "null_value"
+          ],
+          "240": [
+            "null_value"
+          ],
+          "261": [
+            "special_characters"
+          ],
+          "263": [
+            "empty_string"
+          ],
+          "222": [
+            "empty_string"
+          ],
+          "91": [
+            "null_value"
+          ],
+          "65": [
+            "empty_string"
+          ],
+          "173": [
+            "empty_string"
+          ],
+          "30": [
+            "empty_string"
+          ],
+          "134": [
+            "whitespace_only"
+          ],
+          "258": [
+            "special_characters"
+          ],
+          "86": [
+            "empty_string"
+          ],
+          "42": [
+            "empty_string"
+          ],
+          "277": [
+            "null_value"
+          ],
+          "70": [
+            "whitespace_only"
+          ],
+          "95": [
+            "special_characters"
+          ],
+          "56": [
+            "special_characters",
+            "empty_string"
+          ],
+          "41": [
+            "special_characters"
+          ],
+          "200": [
+            "whitespace_only"
+          ],
+          "127": [
+            "null_value"
+          ],
+          "47": [
+            "whitespace_only"
+          ],
+          "224": [
+            "null_value"
+          ],
+          "271": [
+            "whitespace_only",
+            "special_characters"
+          ],
+          "39": [
+            "null_value"
+          ],
+          "295": [
+            "null_value"
+          ],
+          "195": [
+            "special_characters"
+          ],
+          "274": [
+            "special_characters"
+          ],
+          "252": [
+            "whitespace_only"
+          ],
+          "291": [
+            "special_characters"
+          ],
+          "209": [
+            "whitespace_only"
+          ],
+          "206": [
+            "empty_string"
+          ],
+          "169": [
+            "whitespace_only"
+          ],
+          "118": [
+            "whitespace_only"
+          ],
+          "194": [
+            "special_characters"
+          ],
+          "93": [
+            "special_characters"
+          ],
+          "68": [
+            "whitespace_only"
+          ],
+          "97": [
+            "whitespace_only"
+          ],
+          "250": [
+            "null_value"
+          ],
+          "17": [
+            "special_characters"
+          ]
+        },
+        "frequency_achieved": 0.3333333333333333
+      },
+      "generation_method": "Hybrid (Bedrock: 3 fields, SDV: 5 fields)",
+      "bedrock_fields": [
+        "timestamp",
+        "device_type",
+        "app_category"
+      ],
+      "sdv_fields": [
+        "session_duration",
+        "data_usage_mb",
+        "signal_strength",
+        "battery_level",
+        "network_type"
+      ],
+      "original_column_order": [
+        "timestamp",
+        "session_duration",
+        "data_usage_mb",
+        "signal_strength",
+        "battery_level",
+        "device_type",
+        "network_type",
+        "app_category"
+      ],
+      "final_column_order": [
+        "timestamp",
+        "session_duration",
+        "data_usage_mb",
+        "signal_strength",
+        "battery_level",
+        "device_type",
+        "network_type",
+        "app_category"
+      ],
+      "column_order_preserved": true
+    }
+  },
+  "synthetic_data_file": "data/synthetic/wf_csv_20251120_195456_synthetic.csv"
+}

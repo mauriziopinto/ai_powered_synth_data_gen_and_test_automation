@@ -1,0 +1,10 @@
+{
+  "id": "TEST-1",
+  "name": "Verify user login with valid credentials",
+  "description": "\nPreconditions:\n- User account exists in the system\n- User has valid credentials\n\nTest Steps:\n1. Navigate to login page\n2. Enter valid username\n3. Enter valid password\n4. Click login button\n\nExpected Outcome:\n- User is successfully logged in\n- User is redirected to dashboard\n- Welcome message is displayed\n                ",
+  "framework": "robot",
+  "code": "*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    Collections\n\n*** Variables ***\n${BASE_URL}    http://localhost:8080\n\n*** Test Cases ***\nVerify user login with valid credentials\n    [Documentation]    \n    [Tags]    login authentication smoke\n    \n    Log    Test implementation needed\n",
+  "data_references": [],
+  "jira_key": "TEST-1",
+  "created_at": "2025-11-19T18:02:16.285406"
+}

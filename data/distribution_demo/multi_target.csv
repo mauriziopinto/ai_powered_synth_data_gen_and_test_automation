@@ -1,0 +1,6 @@
+Name,Type,Industry,External_Id__c,Revenue,Employees
+Acme Corp,Customer,Technology,ACC001,1000000,50
+Global Inc,Partner,Manufacturing,ACC002,2500000,200
+Tech Solutions,Customer,Technology,ACC003,750000,30
+Data Systems,Partner,Finance,ACC004,1800000,150
+Cloud Services,Customer,Technology,ACC005,3200000,400

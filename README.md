@@ -54,9 +54,8 @@ python scripts/setup_database.py
 
 5. Run the application:
 ```bash
-# Start backend
-cd web/backend
-uvicorn main:app --reload
+# Start backend (from project root)
+uv run uvicorn web.backend.main:app --reload --host 0.0.0.0 --port 8000
 
 # Start frontend (in another terminal)
 cd web/frontend
@@ -64,13 +63,24 @@ npm install
 npm start
 ```
 
+## Workflow Persistence
+
+✅ **Workflows are automatically saved to disk and persist across server restarts!**
+
+All workflow executions are automatically saved to `data/workflows/` as JSON files. This means:
+- No data loss on server restart or crash
+- Complete workflow history preserved
+- Easy debugging and audit trail
+- No database setup required for basic persistence
+
+For more information:
+- Quick Start: See `WORKFLOW_PERSISTENCE_QUICKSTART.md`
+- User Guide: See `WORKFLOW_PERSISTENCE_USER_GUIDE.md`
+- Technical Details: See `WORKFLOW_PERSISTENCE_COMPLETE.md`
+
 ## Requirements
 
 - Python 3.9+
-- PostgreSQL 13+
+- PostgreSQL 13+ (optional - workflows use file-based persistence)
 - Node.js 16+
 - AWS Account with Bedrock access
-
-## License
-
-Proprietary

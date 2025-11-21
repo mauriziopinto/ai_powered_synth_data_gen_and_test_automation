@@ -56,7 +56,7 @@ class AgentLog(Base):
     agent_name = Column(String(100), nullable=False)
     log_level = Column(String(20), nullable=False)
     message = Column(Text, nullable=False)
-    metadata = Column(JSONB)
+    log_metadata = Column(JSONB)
     timestamp = Column(DateTime, nullable=False, default=datetime.utcnow)
     
     execution = relationship("WorkflowExecution", back_populates="logs")
@@ -84,7 +84,7 @@ class ResultsArchive(Base):
     workflow_execution_id = Column(UUID(as_uuid=True), ForeignKey('workflow_executions.id'))
     result_type = Column(String(50), nullable=False)
     storage_path = Column(String(500), nullable=False)
-    metadata = Column(JSONB)
+    result_metadata = Column(JSONB)
     created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
     
     execution = relationship("WorkflowExecution", back_populates="results")
