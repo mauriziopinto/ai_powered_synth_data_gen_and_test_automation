@@ -31,28 +31,40 @@ synthetic-data-generator/
 
 ## Setup
 
-1. Create and activate virtual environment:
+1. Install uv (Python package manager):
+```bash
+# macOS/Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Windows
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# Or with pip
+pip install uv
+```
+
+2. Create and activate virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Configure AWS credentials:
+4. Configure AWS credentials:
 ```bash
 aws configure
 ```
 
-4. Set up database:
+5. Set up database:
 ```bash
 python scripts/setup_database.py
 ```
 
-5. Run the application:
+6. Run the application:
 ```bash
 # Start backend (from project root)
 uv run uvicorn web.backend.main:app --reload --host 0.0.0.0 --port 8000
