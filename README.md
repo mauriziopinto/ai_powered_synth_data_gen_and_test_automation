@@ -43,15 +43,18 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 pip install uv
 ```
 
-2. Create and activate virtual environment:
+2. Create and activate virtual environment with Python 3.10:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# Create venv with uv (automatically uses Python 3.10)
+uv venv --python 3.10
+
+# Activate the virtual environment
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```
 
 3. Install dependencies:
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 4. Configure environment variables:
@@ -99,7 +102,8 @@ For more information:
 
 ## Requirements
 
-- Python 3.9+
+- Python 3.10
+- uv (Python package manager)
 - PostgreSQL 13+ (optional - workflows use file-based persistence)
 - Node.js 16+
 - AWS Account with Bedrock access
