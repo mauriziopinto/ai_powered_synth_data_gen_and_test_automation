@@ -54,12 +54,19 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Configure AWS credentials:
+4. Configure environment variables:
 ```bash
-aws configure
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env and add your configuration:
+# - AWS credentials (AWS_REGION, AWS_PROFILE or AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY)
+# - Bedrock model settings (BEDROCK_MODEL_ID, BEDROCK_TEMPERATURE)
+# - Database URL (if using PostgreSQL)
+# - Optional: Confluence/Jira credentials for demo mode
 ```
 
-5. Set up database:
+5. Set up database (optional):
 ```bash
 python scripts/setup_database.py
 ```
