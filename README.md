@@ -69,12 +69,7 @@ cp .env.example .env
 # - Optional: Confluence/Jira credentials for demo mode
 ```
 
-5. Set up database (optional):
-```bash
-python scripts/setup_database.py
-```
-
-6. Run the application:
+5. Run the application:
 ```bash
 # Start backend (from project root)
 uv run uvicorn web.backend.main:app --reload --host 0.0.0.0 --port 8000
@@ -94,11 +89,6 @@ All workflow executions are automatically saved to `data/workflows/` as JSON fil
 - Complete workflow history preserved
 - Easy debugging and audit trail
 - No database setup required for basic persistence
-
-For more information:
-- Quick Start: See `WORKFLOW_PERSISTENCE_QUICKSTART.md`
-- User Guide: See `WORKFLOW_PERSISTENCE_USER_GUIDE.md`
-- Technical Details: See `WORKFLOW_PERSISTENCE_COMPLETE.md`
 
 ## Requirements
 
