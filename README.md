@@ -2,6 +2,15 @@
 
 An intelligent, agent-based system that orchestrates a complete end-to-end testing workflow from production data ingestion through test execution and reporting. Features advanced AI-powered data distribution using AWS Bedrock Strands and Model Context Protocol (MCP).
 
+## Workflow Overview
+
+The system follows a 4-step workflow:
+
+1. **Configuration** - Define data schema and generation rules
+2. **Synthetic Data Generation** - AI generates realistic test data matching your schema
+3. **AI Distribution** - Conversational AI distributes data to external systems (databases, APIs, Jira, Salesforce) using natural language instructions
+4. **Test Synthesis** - (Coming Soon) Automatic test case generation from distributed data
+
 ## Project Structure
 
 ```
