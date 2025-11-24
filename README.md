@@ -1,6 +1,6 @@
 # Synthetic Data Generator with MCP Distribution
 
-An intelligent, agent-based system that orchestrates a complete end-to-end testing workflow from production data ingestion through test execution and reporting. Features advanced AI-powered data distribution using AWS Bedrock Strands and Model Context Protocol (MCP).
+An agent-based system that orchestrates a complete end-to-end testing workflow from production data ingestion through test execution and reporting.
 
 ## Workflow Overview
 
@@ -8,15 +8,15 @@ The system follows a 5-step workflow:
 
 1. **Configuration** - Define data schema and generation rules
 2. **Synthetic Data Generation** - AI generates realistic test data matching your schema
-3. **AI Distribution** - Conversational AI distributes data to external systems (databases, APIs, Jira, Salesforce) using natural language instructions
-4. **Test Synthesis** - (Coming Soon) Automatic test case generation from distributed data
-5. **Agentic Test Execution** - (Coming Soon) AI-powered test execution and validation
+3. **AI Distribution** - An agent distributes data to external systems (databases, APIs, Jira, Salesforce) using natural language instructions and MCP servers
+4. **Test Synthesis** - (Coming Soon) Automatic test case generation
+5. **Agentic Test Execution** - (Coming Soon) Agentic test execution and validation
 
 ## Project Structure
 
 ```
 synthetic-data-generator/
-├── agents/                 # Strands-based AI agents
+├── agents/                # Strands-based AI agents
 │   ├── data_processor/    # Identifies sensitive data
 │   ├── synthetic_data/    # Generates synthetic data
 │   ├── distribution/      # Distributes data to targets
