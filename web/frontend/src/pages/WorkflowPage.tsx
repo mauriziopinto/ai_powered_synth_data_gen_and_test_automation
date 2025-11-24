@@ -144,6 +144,45 @@ export default function WorkflowPage() {
         status: agent.status,
         progress: agent.progress || 0,
       }));
+      
+      // Check if distribution was completed
+      const completedDistributions = JSON.parse(localStorage.getItem('completed_distributions') || '[]');
+      const isDistributionComplete = statusResponse.data.stages_completed?.includes('distribution') || 
+                                     completedDistributions.includes(workflowId);
+      
+      // Check if distribution agent already exists (from backend)
+      const hasDistributionAgent = canvasAgents.some(a => a.id === 'distribution' || a.name === 'Distribution');
+      
+      // Insert distribution agent in correct position only if it doesn't exist and distribution is complete
+      if (isDistributionComplete && !hasDistributionAgent) {
+        // Find the index of synthetic_data agent
+        const syntheticDataIndex = canvasAgents.findIndex(a => a.id === 'synthetic_data');
+        
+        // Insert distribution agent after synthetic_data
+        const insertIndex = syntheticDataIndex >= 0 ? syntheticDataIndex + 1 : canvasAgents.length;
+        canvasAgents.splice(insertIndex, 0, {
+          id: 'distribution',
+          name: 'Distribution',
+          status: 'completed',
+          progress: 100,
+        });
+        
+        // Update workflow status to include distribution in stages_completed
+        if (!statusResponse.data.stages_completed) {
+          statusResponse.data.stages_completed = [];
+        }
+        if (!statusResponse.data.stages_completed.includes('distribution')) {
+          statusResponse.data.stages_completed.push('distribution');
+        }
+      } else if (isDistributionComplete && hasDistributionAgent) {
+        // Update existing distribution agent status to completed
+        const distAgent = canvasAgents.find(a => a.id === 'distribution' || a.name === 'Distribution');
+        if (distAgent) {
+          distAgent.status = 'completed';
+          distAgent.progress = 100;
+        }
+      }
+      
       setAgents(canvasAgents);
 
       // Store detailed agent information
@@ -431,27 +470,83 @@ export default function WorkflowPage() {
                   agentType="synthetic_data"
                 />
                 
-                {/* Download Button */}
+                {/* Download and Distribution Actions */}
                 <Paper sx={{ p: 2, mb: 2 }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                     <Typography variant="h6">
                       Download Synthetic Dataset
                     </Typography>
                     <Button
-                      variant="contained"
+                      variant="outlined"
                       color="primary"
                       href={`/api/v1/workflow/${workflowId}/download`}
                       download
+                      startIcon={<DownloadIcon />}
                       sx={{ minWidth: 200 }}
                     >
-                      Download Full Dataset (CSV)
+                      Download CSV
                     </Button>
+                  </Box>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pt: 2, borderTop: 1, borderColor: 'divider' }}>
+                    <Box>
+                      <Typography variant="h6" gutterBottom>
+                        Distribute Data to Targets
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Send synthetic data to external systems (databases, APIs, Salesforce, S3)
+                      </Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => navigate(`/workflow/${workflowId}/mcp-distribution`)}
+                        sx={{ minWidth: 200 }}
+                      >
+                        AI Distribution →
+                      </Button>
+                    </Box>
                   </Box>
                 </Paper>
                 
                 {/* Quality Metrics Display */}
                 <QualityMetricsPanel workflowId={workflowId!} />
               </>
+            )}
+
+            {/* Distribution Results - Show if distribution completed */}
+            {workflowStatus?.stages_completed?.includes('distribution') && (
+              <Paper sx={{ p: 2, mb: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                  <Box 
+                    sx={{ 
+                      width: 48, 
+                      height: 48, 
+                      borderRadius: '50%', 
+                      bgcolor: 'success.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <Typography variant="h5" color="white">✓</Typography>
+                  </Box>
+                  <Box>
+                    <Typography variant="h6">
+                      Data Distribution Complete
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Synthetic data has been successfully distributed to target systems
+                    </Typography>
+                  </Box>
+                </Box>
+                
+                <Alert severity="success" sx={{ mb: 2 }}>
+                  Distribution completed successfully. Data has been sent to the configured targets.
+                </Alert>
+
+                {/* Removed legacy distribution buttons - now using MCP Distribution only */}
+              </Paper>
             )}
 
             {/* Agent Activity Logs */}

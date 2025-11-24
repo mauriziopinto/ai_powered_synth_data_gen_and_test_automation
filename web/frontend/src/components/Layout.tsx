@@ -19,6 +19,8 @@ import {
   Settings as SettingsIcon,
   PlayArrow as PlayArrowIcon,
   Slideshow as SlideshowIcon,
+  CloudUpload as CloudUploadIcon,
+  Cable as CableIcon,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -36,6 +38,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { text: 'Workflows', icon: <PlayArrowIcon />, path: '/' },
   { text: 'Create...', icon: <SettingsIcon />, path: '/configuration' },
+  { text: 'MCP Config', icon: <CableIcon />, path: '/mcp-config' },
   { text: 'Guided Demos', icon: <SlideshowIcon />, path: '/demo' },
 ];
 

@@ -34,7 +34,11 @@ from web.backend.routers import (
     audit,
     demo,
     csv_enhanced,
-    cost_estimation
+    cost_estimation,
+    targets,
+    mock_targets,
+    mcp_config,
+    mcp_distribution
 )
 from web.backend.websocket_manager import WebSocketManager
 
@@ -116,6 +120,25 @@ app.include_router(
 app.include_router(
     cost_estimation.router,
     tags=["cost-estimation"]
+)
+app.include_router(
+    targets.router,
+    prefix="/api/v1",
+    tags=["targets"]
+)
+app.include_router(
+    mock_targets.router,
+    prefix="/api/v1",
+    tags=["mock-targets"]
+)
+app.include_router(
+    mcp_config.router,
+    prefix="/api/v1",
+    tags=["mcp"]
+)
+app.include_router(
+    mcp_distribution.router,
+    tags=["mcp-distribution"]
 )
 
 

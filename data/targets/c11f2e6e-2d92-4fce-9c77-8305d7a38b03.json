@@ -1,0 +1,13 @@
+{
+  "id": "c11f2e6e-2d92-4fce-9c77-8305d7a38b03",
+  "name": "Mock Production Database",
+  "type": "database",
+  "config": {
+    "connection_string": "postgresql://mock:mock@localhost:5432/production",
+    "table_name": "customers",
+    "database_type": "postgresql"
+  },
+  "created_at": "2025-11-24T15:53:27.796283",
+  "updated_at": "2025-11-24T15:53:27.796290",
+  "is_active": true
+}

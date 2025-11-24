@@ -6,6 +6,9 @@ import WorkflowListPage from './pages/WorkflowListPage';
 import WorkflowPage from './pages/WorkflowPage';
 import StrategySelectionPage from './pages/StrategySelectionPage';
 import { DemoPage } from './pages/DemoPage';
+import MCPConfigPage from './pages/MCPConfigPage';
+import MCPDistributionPage from './pages/MCPDistributionPage';
+import TestSynthesisPage from './pages/TestSynthesisPage';
 
 function App() {
   return (
@@ -18,7 +21,10 @@ function App() {
           <Route path="/workflow" element={<WorkflowListPage />} />
           <Route path="/workflow/:workflowId" element={<WorkflowPage />} />
           <Route path="/workflow/:workflowId/strategy-selection" element={<StrategySelectionPage />} />
+          <Route path="/workflow/:workflowId/mcp-distribution" element={<MCPDistributionPage />} />
+          <Route path="/workflow/:workflowId/test-synthesis" element={<TestSynthesisPage />} />
           <Route path="/demo" element={<DemoPage />} />
+          <Route path="/mcp-config" element={<MCPConfigPage />} />
         </Routes>
       </Layout>
     </Box>

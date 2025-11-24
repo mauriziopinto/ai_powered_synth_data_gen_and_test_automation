@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "data/distribution_test.db"
+      ],
+      "disabled": false
+    },
+    "filesystem": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-filesystem",
+        "data/mcp-output"
+      ],
+      "disabled": true,
+      "note": "Disabled - conflicts with macOS Calculator app"
+    },
+    "memory": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-memory"
+      ],
+      "disabled": true,
+      "note": "Disabled - not needed for basic testing"
+    }
+  }
+}

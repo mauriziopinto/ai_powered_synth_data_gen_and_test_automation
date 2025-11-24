@@ -1,0 +1,11 @@
+{
+  "id": "5aff4121-0dfc-4291-87b5-47d093431389",
+  "name": "Customer Care",
+  "type": "api",
+  "config": {
+    "endpoint_url": "https://localhost:2103/APIs"
+  },
+  "created_at": "2025-11-24T16:16:41.943841",
+  "updated_at": "2025-11-24T16:16:41.943845",
+  "is_active": true
+}
