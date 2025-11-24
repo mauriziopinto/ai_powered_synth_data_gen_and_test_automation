@@ -1,6 +1,6 @@
 # Synthetic Data Generator with MCP Distribution
 
-An agent-based system that orchestrates a complete end-to-end testing workflow from production data ingestion through test execution and reporting.
+An agent-based system that orchestrates a complete end-to-end testing workflow from synthetic data generation through test execution and reporting.
 
 ## Workflow Overview
 
