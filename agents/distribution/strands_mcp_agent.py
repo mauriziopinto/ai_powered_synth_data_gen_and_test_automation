@@ -96,7 +96,7 @@ class StrandsMCPDistributionAgent:
     def __init__(
         self,
         mcp_config_path: str,
-        model_id: str = "anthropic.claude-3-5-sonnet-20241022-v2:0"
+        model_id: str = "us.anthropic.claude-3-5-sonnet-20241022-v2:0"
     ):
         """
         Initialize Strands MCP distribution agent.
