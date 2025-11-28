@@ -12,7 +12,9 @@ The system follows a 5-step workflow:
 4. **Test Synthesis** - (Coming Soon) Automatic test case generation
 5. **Agentic Test Execution** - (Coming Soon) Agentic test execution and validation
 
-https://github.com/user-attachments/assets/b75a921e-c833-4b02-8337-9574e3492807
+
+https://github.com/user-attachments/assets/b1dd8759-05e3-4a2c-b923-c49708131ce5
+
 
 ## Setup
 
