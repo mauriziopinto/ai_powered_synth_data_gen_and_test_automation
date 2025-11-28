@@ -12,32 +12,9 @@ The system follows a 5-step workflow:
 4. **Test Synthesis** - (Coming Soon) Automatic test case generation
 5. **Agentic Test Execution** - (Coming Soon) Agentic test execution and validation
 
-## Project Structure
 
-```
-synthetic-data-generator/
-├── agents/                # Strands-based AI agents
-│   ├── data_processor/    # Identifies sensitive data
-│   ├── synthetic_data/    # Generates synthetic data
-│   ├── distribution/      # Distributes data to targets
-│   ├── test_case/         # Creates test cases
-│   └── test_execution/    # Executes tests
-├── web/                   # React web application
-│   ├── frontend/          # React UI
-│   └── backend/           # FastAPI backend
-├── shared/                # Shared libraries and utilities
-│   ├── models/            # Data models
-│   ├── database/          # Database utilities
-│   └── utils/             # Common utilities
-├── tests/                 # Test suite
-│   ├── unit/              # Unit tests
-│   └── property/          # Property-based tests
-├── data/                  # Data storage
-│   ├── production/        # Production data samples
-│   └── synthetic/         # Generated synthetic data
-├── results/               # Execution results
-└── config/                # Configuration files
-```
+[![Demo Video](https://img.youtube.com/vi/UgZR5nL6mtA/0.jpg)](https://www.youtube.com/watch?v=UgZR5nL6mtA)
+
 
 ## Setup
 
